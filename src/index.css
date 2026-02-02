@@ -1,96 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Cutopia Design System - Warm, cozy, Pinterest-inspired ceramic mug brand
+   Colors: Soft pastels - cream, blush, sage, sky blue, terracotta
+   Typography: Playfair Display (serif) + DM Sans (body)
+   Feel: Slow mornings, tea by the window, handcrafted warmth
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core brand colors - warm cream base */
+    --background: 30 50% 98%;
+    --foreground: 25 30% 18%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Cards with subtle warmth */
+    --card: 35 40% 97%;
+    --card-foreground: 25 30% 18%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 35 40% 97%;
+    --popover-foreground: 25 30% 18%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Warm terracotta/brown */
+    --primary: 18 45% 40%;
+    --primary-foreground: 35 40% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Soft blush pink */
+    --secondary: 10 40% 93%;
+    --secondary-foreground: 18 45% 35%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Light sage tones */
+    --muted: 90 20% 94%;
+    --muted-foreground: 25 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Soft sky blue */
+    --accent: 200 30% 92%;
+    --accent-foreground: 200 35% 30%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Blush pink for special elements */
+    --blush: 10 50% 92%;
+    --blush-foreground: 10 45% 35%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Sage green */
+    --sage: 100 25% 90%;
+    --sage-foreground: 100 30% 30%;
 
-    --radius: 0.5rem;
+    /* Terracotta accent */
+    --terracotta: 18 55% 55%;
+    --terracotta-foreground: 35 40% 97%;
 
-    --sidebar-background: 0 0% 98%;
+    /* Gold accent */
+    --gold: 40 60% 55%;
+    --gold-foreground: 35 40% 97%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --border: 30 30% 88%;
+    --input: 30 30% 88%;
+    --ring: 18 45% 40%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --radius: 1rem;
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    /* Typography */
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'DM Sans', system-ui, sans-serif;
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(25 30% 20% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(25 30% 20% / 0.12);
+    --shadow-hover: 0 12px 40px -10px hsl(25 30% 20% / 0.18);
 
-    --sidebar-border: 220 13% 91%;
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(35 40% 97%) 0%, hsl(10 40% 95%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(30 50% 98%) 0%, hsl(35 40% 95%) 100%);
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 35 40% 97%;
+    --sidebar-foreground: 25 30% 25%;
+    --sidebar-primary: 18 45% 40%;
+    --sidebar-primary-foreground: 35 40% 97%;
+    --sidebar-accent: 10 40% 93%;
+    --sidebar-accent-foreground: 18 45% 35%;
+    --sidebar-border: 30 30% 88%;
+    --sidebar-ring: 18 45% 40%;
   }
 
+  /* Keep dark mode but warm-toned */
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 25 25% 10%;
+    --foreground: 35 30% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 25 20% 14%;
+    --card-foreground: 35 30% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 25 20% 14%;
+    --popover-foreground: 35 30% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 18 50% 60%;
+    --primary-foreground: 25 25% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 10 25% 20%;
+    --secondary-foreground: 10 40% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 25 15% 18%;
+    --muted-foreground: 30 20% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 200 20% 18%;
+    --accent-foreground: 200 30% 85%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --blush: 10 25% 18%;
+    --blush-foreground: 10 40% 85%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sage: 100 15% 18%;
+    --sage-foreground: 100 25% 80%;
+
+    --terracotta: 18 50% 55%;
+    --terracotta-foreground: 25 25% 10%;
+
+    --gold: 40 55% 50%;
+    --gold-foreground: 25 25% 10%;
+
+    --destructive: 0 55% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 18 50% 60%;
+
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 8px 30px -8px hsl(0 0% 0% / 0.4);
+    --shadow-hover: 0 12px 40px -10px hsl(0 0% 0% / 0.5);
+
+    --gradient-warm: linear-gradient(135deg, hsl(25 20% 14%) 0%, hsl(10 20% 12%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(25 25% 10%) 0%, hsl(25 20% 14%) 100%);
+
+    --sidebar-background: 25 20% 14%;
+    --sidebar-foreground: 35 30% 92%;
+    --sidebar-primary: 18 50% 60%;
+    --sidebar-primary-foreground: 25 25% 10%;
+    --sidebar-accent: 10 25% 20%;
+    --sidebar-accent-foreground: 10 40% 85%;
+    --sidebar-border: 25 15% 22%;
+    --sidebar-ring: 18 50% 60%;
   }
 }
 
@@ -99,7 +152,133 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  /* Subtle paper texture overlay */
+  .paper-texture {
+    position: relative;
+  }
+  
+  .paper-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.015;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Animated underline for links */
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute w-full h-0.5 bottom-0 left-0 bg-primary origin-bottom-right transition-transform duration-300 scale-x-0;
+  }
+
+  .link-underline:hover::after {
+    @apply origin-bottom-left scale-x-100;
+  }
+
+  /* Soft card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* WhatsApp button styles */
+  .whatsapp-float {
+    @apply fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  }
+
+  /* Fade up animation */
+  .fade-up {
+    @apply opacity-0 translate-y-4;
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Staggered children animation */
+  .stagger-children > * {
+    @apply opacity-0 translate-y-4;
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+
+  .stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+  .stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+  /* Section reveal */
+  .reveal-section {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .reveal-section.visible {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
   }
 }
