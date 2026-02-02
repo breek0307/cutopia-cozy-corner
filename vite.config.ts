@@ -10,8 +10,7 @@ export default defineConfig(({ mode }) => ({
     hmr: {
       overlay: false,
     },
-          allowedHosts: [".onrender.com", "localhost"],
-  },
+allowedHosts: "all",
   plugins: [react()],
   resolve: {
     alias: {
