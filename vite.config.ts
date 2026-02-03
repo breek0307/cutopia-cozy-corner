@@ -10,7 +10,8 @@ export default defineConfig(({ mode }) => ({
     hmr: {
       overlay: false,
     },
-allowedHosts: "all",
+    allowedHosts: "all",
+  },
   plugins: [react()],
   resolve: {
     alias: {
