@@ -26,7 +26,7 @@ const deliveryFeatures = [
 
 const Delivery = () => {
   return (
-    <section className="py-16 md:py-20 bg-blush/30">
+    <section id="delivery" className="py-16 md:py-20 bg-blush/30">
       <div className="container px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

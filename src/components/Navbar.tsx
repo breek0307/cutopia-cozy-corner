@@ -99,7 +99,7 @@ const Navbar = () => {
                   {activeLink === link.href && (
                     <motion.div
                       layoutId="activeNav"
-                      className="absolute inset-0 rounded-full"
+                      className="absolute inset-0 rounded-full bg-primary"
                       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                     />
                   )}

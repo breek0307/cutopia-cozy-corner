@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ShoppingBag, MessageCircle } from 'lucide-react';
+import { MessageCircle, Truck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const MobileOrderBar = () => {
@@ -10,8 +10,8 @@ const MobileOrderBar = () => {
     );
   };
 
-  const scrollToShop = () => {
-    const element = document.querySelector('#shop');
+  const scrollToDelivery = () => {
+    const element = document.querySelector('#delivery');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -22,23 +22,25 @@ const MobileOrderBar = () => {
       initial={{ y: 100 }}
       animate={{ y: 0 }}
       transition={{ delay: 0.5, duration: 0.3 }}
-      className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background/95 backdrop-blur-md border-t border-border p-4 shadow-lg"
+      className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background/95 backdrop-blur-md border-t border-border p-3 shadow-lg"
     >
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2">
         <Button
-          onClick={scrollToShop}
+          onClick={scrollToDelivery}
           variant="outline"
-          className="flex-1 border-primary/30 text-primary rounded-full"
+          size="sm"
+          className="flex-1 border-primary/30 text-primary hover:bg-primary/5 rounded-full text-sm"
         >
-          <ShoppingBag className="w-4 h-4 mr-2" />
-          Shop
+          <Truck className="w-4 h-4 mr-1.5" />
+          Delivery Info
         </Button>
         <Button
           onClick={openWhatsApp}
-          className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full"
+          size="sm"
+          className="flex-[1.5] bg-primary hover:bg-primary/90 text-primary-foreground rounded-full text-sm shadow-md"
         >
-          <MessageCircle className="w-4 h-4 mr-2" />
-          Order Now
+          <MessageCircle className="w-4 h-4 mr-1.5" />
+          Order on WhatsApp
         </Button>
       </div>
     </motion.div>

@@ -281,4 +281,40 @@
   .bg-gradient-hero {
     background: var(--gradient-hero);
   }
+
+  /* Button hover effect */
+  .btn-hover-lift {
+    @apply transition-all duration-200 ease-out;
+  }
+
+  .btn-hover-lift:hover {
+    @apply -translate-y-0.5;
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .btn-hover-lift:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  /* Image zoom on hover */
+  .img-hover-zoom {
+    @apply overflow-hidden;
+  }
+
+  .img-hover-zoom img {
+    @apply transition-transform duration-500 ease-out;
+  }
+
+  .img-hover-zoom:hover img {
+    @apply scale-105;
+  }
+
+  /* Smooth section reveal on scroll */
+  .section-fade-in {
+    @apply opacity-0 translate-y-6 transition-all duration-700 ease-out;
+  }
+
+  .section-fade-in.visible {
+    @apply opacity-100 translate-y-0;
+  }
 }
